@@ -29,7 +29,7 @@
                 $b=$_GET["arv2"] ;
                 $s=$a/$b;
                 echo "Jagatis on ".$s."<br>";
-            }elseif($_GET["arv1"] == 0 or $_GET["arv2"] == 0 ){echo "Sisesta midagi õiget";}
+            }elseif($_GET["arv1"] == 0 or $_GET["arv2"] == 0 ){echo "ara sisesta nulli";}
         
             ?>
 
@@ -45,7 +45,7 @@
             </form>
             <?php
     
-        if(!empty($_GET["x"]) && !empty($_GET["y"])) {
+    if(!empty($_GET["x"]) && !empty($_GET["y"])) {
             $x = intval($_GET["y"]);
             $y = intval($_GET["x"]);
             if($x > $y) {
@@ -61,8 +61,73 @@
 
         ?>
 
+        <h2>Ruut ja  ristkülik</h2>
+        <form action="" method="get">
+            <label for="g">Esimene külg</label>
+            <input type="number" class="form-control" name="g" id="g"><br>
+            <label for="f"> teine külg</label>
+            <input type="number" class="form-control" name="f" id="f"><br>
+            <input type="submit" class="btn btn-success my-2" value="Leia kas on ruut või ristkülik">
+        </form>
+        
+
+        
+    <h2>kas on juubel või mitte</h2>
+        <form action="" method="get">
+            <label for="n">Sisestage oma sünniaasta:</label>
+            <input type="number" class="form-control" name="n" id="n"><br>
+            <input type="submit"  class="btn btn-success my-2" value="juubel voi ei">
+        </form>
+        
+
+        <?php
+        if(!empty($_GET["n"])) {
+            $n = intval($_GET["n"]);
+            if(($n % 5) == 0) {
+                echo "jah  $n on juubeliaasta ";
+            } else {
+                echo "Aasta $n ei ole juubeliaasta";
+            }
+        } else {
+            echo "sisesta sünniaasta uuesti.";
+        }
+    ?>
     
-    
+
+    <h2>Hinded</h2>
+        <form action="#" method="get">
+            <label for="b">Sisesta hinne</label>
+            <input type="number" class="form-control" name="b" id="b"><br>
+            <input type="submit"  class="btn btn-danger my-2" value="vaata kas said hea hinde või mitte">
+        </form>
+
+        <?php
+         if(!empty($_GET["b"])) {
+            $b = intval($_GET["b"]);
+            switch(true) {
+                case $b >= 10:
+                    echo "vaga hea";
+                    break;
+                case $b >= 5 && $b <= 9:
+                    echo "normaalne!";
+                    break;
+                case $b < 5:
+                    echo "halb";
+                    break;
+                default:
+                    echo "Sisesta hinne";
+            }
+        } else {
+            echo "Sisesta hinne ";
+        }
+    ?>
+
+
+
+
+
+
+
 
 
 
