@@ -38,6 +38,8 @@ $suvaline_nimi = $nimed[$suvaline_indeks];
 echo "<br>Suvaline nimi:<br>" . $suvaline_nimi . "<br>";
 ?>
 
+
+
 <?php
 $autod = array ("Subaru","BMW","Acura","Mercedes-Benz","Lexus","GMC","Volvo","Toyota","Volkswagen","Volkswagen","GMC","Jeep","Saab","Hyundai","Subaru","Mercedes-Benz",
 "Honda","Kia","Mercedes-Benz","Chevrolet","Chevrolet","Porsche","Buick","Dodge","GMC","Dodge","Nissan","Dodge","Jaguar","Ford","Honda","Toyota","Jeep",
@@ -81,22 +83,42 @@ foreach ($vinkood as $vin) {
 
 ?>
 
+<?php
+
+$palk = array(1220, 1213, 1295, 1312, 1298, 1354, 1296, 1286, 1292, 1327, 1369, 1455);
+
+$summa = array_sum($palk);
+$arv = count($palk);
+
+$keskmine = $summa / $arv;
+
+echo "keskmine on: " . $keskmine;
+?>
 
 
 
+<?php
+$firmad = array("Kimia", "Mynte", "Voomm", "Twiyo", "Layo", "Talane", "Gigashots", "Tagchat", "Quaxo", "Voonyx", "Kwilith", "Edgepulse", "Eidel", "Eadel", "Jaloo", "Oyope", "Jamia");
+?>
 
+<?php
 
+$riigid = array( "Indonesia","Canada","Kyrgyzstan","Germany","Philippines",
+    "Philippines","Canada","Philippines","South Sudan","Brazil",
+    "Democratic Republic of the Congo","Indonesia","Syria","Sweden",
+    "Philippines","Russia","China","Japan","Brazil","Sweden","Mexico","France",
+    "Kazakhstan","Cuba","Portugal","Czech Republic");
 
+$pikkus = 0;
+foreach ($riigid as $riik) {
+    $pikkus = strlen($riik);
+    if ($pikkus > $pikkus) {
+        $pikkus = $pikkus1;
+    }
+}
 
-
-
-
-
-
-
-
-
-
+echo "Koige pikem riik on: " . $pikkus;
+?>
 
 
 
